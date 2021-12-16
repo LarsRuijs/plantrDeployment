@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: plantr-fe-deployment
+  name: customerwebapp-deployment
   labels:
-    app: plantr-fe
+    app: customerwebapp
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: plantr-fe
+      app: customerwebapp
   template:
     metadata:
       labels:
-        app: plantr-fe
+        app: customerwebapp
     spec:
       containers:
-      - name: plantr-fe
-        image: ghcr.io/unlegendnl/plantrfrontendcomponent:main
+      - name: customerwebapp
+        image: docker.io/lars14/miw-customerwebapp:release0.0.7
         imagePullPolicy: Always
         ports:
         - containerPort: 80
